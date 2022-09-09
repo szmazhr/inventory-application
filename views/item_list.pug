@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each item in itemList
+      li
+        a(href=item.url) #{item.name}
+        if !item.stock 
+          span.text-danger Out of Stock
+    else
+      li There are no items.
